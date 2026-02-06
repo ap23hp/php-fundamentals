@@ -59,6 +59,30 @@ $user2->year = 2025;
 echo $user1->namee . "<br>";
 echo $user2->namee;
 
+class Book{
+public $title;
+public $author;
+public $price;
 
+public function __construct($title,$author,$price){
+ $this->title=$title;
+  $this->author=$author;
+   $this->price=$price;
+   
+}
+ public function getSummary() {
+        return "Book: $this->title | Author: $this->author | Price: $this->price";
+    }
+
+    public function getDiscountedPrice($percent){
+     return $this->price - ($this->price * $percent / 100);
+
+    }
+}
+
+
+$book1 = new Book("Atomic Habits", "James Clear", 399);
+echo $book1->getSummary();
+echo $book1->getDiscountedPrice(10);
 
 ?>
