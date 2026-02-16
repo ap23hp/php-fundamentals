@@ -132,6 +132,29 @@ foreach($all_provinces as $province){
     echo "📍 " . $province . "<br>";
 }
 
+function get_alberta_cities() {
+    $all_cities = milani_get_all_cities();
+    
+    $alberta_cities = [];  // ← Empty array to collect
+    
+    foreach($all_cities as $city_slug => $data) {
+        if($data['province'] === 'Alberta') {
+            $alberta_cities[$city_slug] = $data;  // ← ADD to array (not replace!)
+            //               ↑ key          ↑ value
+        }
+    }
+    
+    return $alberta_cities;
+}
+
+// Display
+echo "<h2>Cities in Alberta:</h2>";
+$alberta = get_alberta_cities();
+
+foreach($alberta as $city_name => $city_info) {
+    echo "📍 " . $city_info['name'] . " (" . $city_info['phone'] . ")<br>";
+}
+
 
 
 ?>
