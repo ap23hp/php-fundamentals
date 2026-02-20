@@ -121,3 +121,36 @@ User fills form
 → Result sent back to browser
 
 This is how frontend and backend work together in a basic PHP application. -->
+
+<!-- HTTP is Stateless
+
+Every request is separate.
+
+Server does NOT remember:
+
+Who you are
+
+What you submitted before
+
+Whether you're logged in
+
+So we create memory using:
+
+👉 $_SESSION  A session is:
+
+Server-side storage
+
+Unique per user
+
+Linked using a session ID
+
+Automatically managed by PHP
+
+When session starts:
+PHP creates a unique ID.
+Browser stores it in a cookie.
+On next request:
+Browser sends session ID back.
+Server loads saved session data.
+
+That’s how login works. -->
